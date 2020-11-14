@@ -9,6 +9,8 @@ For example, given the string "([])[]({})", you should return true.
 
 Given the string "([)]" or "((()", you should return false.
 
+This also got sent to me as "Daily Coding Problem: Problem #712 [Easy]"
+
 ## Building and running
 
 ```sh
@@ -59,7 +61,7 @@ and each successive PAIR that gets popped make the PAIRLIST one item longer.
 
 There's another algorithm that involves indexing through the runes
 of the string, eliminating any simple substrings that match '()', '[]' or '{}'.
-After each elimination, you start over at index 1.
+After each elimination, you start over at index 1 or 0, as appropriate.
 If you end up with a zero-length string,
 the original string has balanced parens/brackets/braces.
 I wrote a [program](mangle.go) for this algorithm to see how it works.
@@ -88,3 +90,7 @@ and maybe implement a hacky substring-match-and-eliminate.
 I think that an interviewer wouldn't see much in the way of programming,
 so it's not a suitable question if the interviewer wants to see someone
 write a program.
+
+The "easy" rating seems off.
+This has to qualify as a "medium" if you do actual matching,
+and maybe even if you just cut out matching-pairs-substrings.
