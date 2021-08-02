@@ -10,10 +10,6 @@ For example, given the string "([])[]({})", you should return true.
 
 Given the string "([)]" or "((()", you should return false.
 
-This also got sent to me as "Daily Coding Problem: Problem #712 [Easy]"
-
-This is also: Daily Coding Problem: Problem #809 [Easy] 
-
 ## Building and running
 
 ```sh
@@ -29,6 +25,19 @@ Expression balanced
 
 This problem has been around for a while,
 I don't think it's original to Facebook.
+
+This also got sent to me as "Daily Coding Problem: Problem #712 [Easy]",
+and Daily Coding Problem: Problem #809 [Easy] 
+
+It appears in the "Daily Coding Problem" book
+in chapter 4, "Stacks and Queues",
+as "4.2 Determine whether brackets are balanced".
+This is one problem that the authors give some hints at
+further exploration, in that they note some "balanced"
+strings of parens are not palindromes, but some "unbalanced"
+strings of parens are palindromes.
+Usually, that book's emphasis is on getting a solution ASAP,
+without giving any context or ideas for futher exploration.
 
 You can't do the "+1 for a left paren, -1 for a right"
 stunt that you can for [balanced parentheses problems](https://github.com/bediger4000/binary-tree-odd-string-rep#iteration-3).
