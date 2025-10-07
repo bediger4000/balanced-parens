@@ -41,6 +41,10 @@ func main() {
 	fmt.Printf("Expression balanced\n")
 }
 
+// setupMatches parses a command line value, the pairs of characters the user
+// specified to use as matching parentheses, or braces. The default above is
+// "(){}[]". This assumes user input has the same format: any number of left
+// "paren", matching right "paren" pairs.
 func setupMatches(matchPairs string) map[rune]rune {
 	matches := make(map[rune]rune)
 	var last rune
