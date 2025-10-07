@@ -23,7 +23,7 @@ func main() {
 
 	mismatch := false
 	for _, r := range runes {
-		if m, ok := matches[r]; ok {
+		if m, ok := matches[r]; len(stack) > 0 && ok {
 			top := stack[len(stack)-1]
 			if m != top {
 				fmt.Printf("Got %c, found %c on stack\n", r, top)
