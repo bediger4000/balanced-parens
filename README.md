@@ -19,7 +19,24 @@ Expression balanced
 $ go build mangle.go
 $ ./mangle '(([]{}()))'
 Expression balanced
+$ go build balanced2
+$ ./balanced2 -m '<>()[]{}' '<{[]}()>'
+Expression balanced
 ```
+
+The `balanced2` program allows specification of which pairs of characters
+are corresponding opening and closing "parentheses".
+It allows you to specify ')' as opening paren,
+and '(' as the corresponding closing paren, if you want to.
+It defaults to `(){}[]`, 3 pairs of left and matching right parentheses,
+but you can use any characters, like `./balanced2 -m aAbBcC abBcBA`.
+You can investigate Dyck-$X language recognizing.
+
+## Computer Science
+
+The programs this problem prompts you to write are recognizers for
+[Dyck Languages](https://planetmath.org/dycklanguage),
+specifically, Dyck-3.
 
 ## Analysis
 
@@ -77,6 +94,10 @@ After each elimination, you start over at index 1 or 0, as appropriate.
 If you end up with a zero-length string,
 the original string has balanced parens/brackets/braces.
 I wrote a [program](mangle.go) for this algorithm to see how it works.
+
+The interviewer could look at whether the candidate tries test cases.
+My original cut at this missed the case of an unmatched '(', '{' or '[' case,
+despite my best efforts at testing.
 
 I have mixed feelings about this as an interview question.
 I did it in less than 50 lines of Go,
