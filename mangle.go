@@ -20,7 +20,6 @@ func main() {
 		switch runes[i] {
 		case '(':
 			if runes[i+1] == ')' {
-				fmt.Printf("pair ()\n")
 				runes = append(runes[:i], runes[i+2:]...)
 				i = 0
 				continue
